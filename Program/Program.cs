@@ -26,8 +26,8 @@ void FillArray(string [] arr)
 
 string [] SortedArray(string [] array, int SizeElement) // создаем новый массив с нужными элементами
 {
-    string [] arr = new string [CounterElements(array)];
-    int count = 0; // добавил счетчик, что бы небыло пустых промежутков между элементами
+    string [] arr = new string [CounterElements(array, SizeElement)];
+    int count = 0; 
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= SizeElement)
@@ -39,12 +39,12 @@ string [] SortedArray(string [] array, int SizeElement) // создаем нов
     return arr;
 }
 
-int CounterElements(string [] arr) // орпеделяет длину нового массива
+int CounterElements(string [] arr, int SizeElement) // орпеделяет длину нового массива
 {
     int count = 0; 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i].Length <= 3)
+        if (arr[i].Length <= SizeElement)
         {
             count++;
         }
